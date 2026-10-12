@@ -92,6 +92,7 @@
                                     <dr.StuffyMapperData:Data ver="10.0">
                                         <sourceCode><![CDATA[consume {
     debug(input);
+    //comment
 }]]></sourceCode>
                                         <dr.DRTypeInfo:udrTypes>
                                             <dr.DRTypeInfo:value TypeName="bytearray" ver="1.0"/>
