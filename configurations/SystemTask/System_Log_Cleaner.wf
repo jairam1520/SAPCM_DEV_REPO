@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mz:configuration format-version="1.0">
+    <mz:data>
+        <dr.Configuration:dr.Configuration Folder="SystemTask" Key="SystemTaskSystemLogCleaner" Name="System_Log_Cleaner" Owner="mzadmin" Type="Workflow" encrypted="false" ver="10.1" wf-parameters="">
+            <STRING:Access_Groups_-----.read_-----.write_-----.execute>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+            </STRING:Access_Groups_-----.read_-----.write_-----.execute>
+            <dr.ConfigAuxData:Auxiliary_Data ver="2.0">
+                <Entries keyType="STRING" type="java.util.LinkedHashMap" valueType="STRING">
+                    <Autostart value="false"/>
+                    <BatchScalable value="false"/>
+                    <Count value="1"/>
+                    <DynamicConfig value="false"/>
+                    <Standalone value="false"/>
+                    <Type value="System Task"/>
+                </Entries>
+            </dr.ConfigAuxData:Auxiliary_Data>
+            <mz:workflow-template>
+                <dr.WorkflowSystemTaskData:Data ver="10.3">
+                    <Nodes>
+                        <dr.WfNode:value Classname="com.digitalroute.log.cleanup.CleanUpLogTaskInsp" ID="${identity@dr.WfNode#System_Log_Cleaner..ID}" Name="System_Log_Cleaner" XYposition="${layout@dr.WfNode#System_Log_Cleaner..XYposition}" ver="2.0">
+                            <dr.WfNodeConfig:Configuration>
+                                <dr.WfNodeConfig:value Classname="com.digitalroute.log.cleanup.CleanUpLogTaskInsp" Type="1" ver="1.0">
+                                    <dr.CleanUpLogConf:Data ver="10.0">
+                                        <errorDisaster value="30"/>
+                                        <information value="10"/>
+                                        <warning value="20"/>
+                                    </dr.CleanUpLogConf:Data>
+                                </dr.WfNodeConfig:value>
+                            </dr.WfNodeConfig:Configuration>
+                        </dr.WfNode:value>
+                    </Nodes>
+                    <Routes/>
+                    <Comments/>
+                    <Service/>
+                    <Logged_error_MIM/>
+                    <Workflow_ID_Counter value="1"/>
+                    <dr.WorkflowExecutionConfig:Execution_Config ver="10.0">
+                        <dr.DebugType:debugType value="EVENT"/>
+                        <dr.ExecutionSettings:executionSettings ver="11.0">
+                            <enabled value="false"/>
+                            <null:kafka/>
+                        </dr.ExecutionSettings:executionSettings>
+                        <noOfFilesToKeep value="0"/>
+                        <throughputMIM/>
+                        <txnHandler value="Default Handler"/>
+                    </dr.WorkflowExecutionConfig:Execution_Config>
+                    <Field_Types/>
+                    <Template_Valid value="false"/>
+                    <dr.DynamicConfigStorableDefinition:dyn ver="2.0">
+                        <fields type="java.util.TreeMap"/>
+                    </dr.DynamicConfigStorableDefinition:dyn>
+                    <null:External_Reference_Profile/>
+                    <External_Reference_Values type="java.util.Hashtable"/>
+                    <Export_Instance_Values value="false"/>
+                    <Package_Name value=""/>
+                    <External_Reference_Lists type="java.util.Hashtable"/>
+                    <External_Reference_Maps type="java.util.Hashtable"/>
+                </dr.WorkflowSystemTaskData:Data>
+            </mz:workflow-template>
+            <mz:wf-instances>
+                <mz:wf-instance instanceId="1" name="System_Log_Cleaner" state="VALID" validationError=""/>
+            </mz:wf-instances>
+            <documentation value=""/>
+            <null:Dynamic_Parameters/>
+            <Is_Dry_Run value="false"/>
+        </dr.Configuration:dr.Configuration>
+    </mz:data>
+    <mz:referenced-data>
+        <layout>
+            <dr.WfNode>
+                <dr.WfRoute--.StorablePoint:System---.Log---.Cleaner..XYposition X_position="100" Y_position="100" ver="1.0"/>
+            </dr.WfNode>
+        </layout>
+        <identity>
+            <dr.WfNode>
+                <System---.Log---.Cleaner..ID value="2"/>
+            </dr.WfNode>
+        </identity>
+    </mz:referenced-data>
+</mz:configuration>

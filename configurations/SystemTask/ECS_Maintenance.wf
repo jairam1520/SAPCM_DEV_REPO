@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mz:configuration format-version="1.0">
+    <mz:data>
+        <dr.Configuration:dr.Configuration Folder="SystemTask" Key="SystemTaskECSMaintenance" Name="ECS_Maintenance" Owner="mzadmin" Type="Workflow" encrypted="false" ver="10.1" wf-parameters="">
+            <STRING:Access_Groups_-----.read_-----.write_-----.execute>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+            </STRING:Access_Groups_-----.read_-----.write_-----.execute>
+            <dr.ConfigAuxData:Auxiliary_Data ver="2.0">
+                <Entries keyType="STRING" type="java.util.LinkedHashMap" valueType="STRING">
+                    <Autostart value="false"/>
+                    <BatchScalable value="false"/>
+                    <Count value="1"/>
+                    <DynamicConfig value="false"/>
+                    <Standalone value="false"/>
+                    <Type value="System Task"/>
+                </Entries>
+            </dr.ConfigAuxData:Auxiliary_Data>
+            <mz:workflow-template>
+                <dr.WorkflowSystemTaskData:Data ver="10.3">
+                    <Nodes>
+                        <dr.WfNode:value Classname="com.digitalroute.ecs.cleanup.EcsCleanupTaskInsp" ID="${identity@dr.WfNode#ECS_Maintenance..ID}" Name="ECS_Maintenance" XYposition="${layout@dr.WfNode#ECS_Maintenance..XYposition}" ver="2.0">
+                            <dr.WfNodeConfig:Configuration>
+                                <dr.WfNodeConfig:value Classname="com.digitalroute.ecs.cleanup.EcsCleanupTaskInsp" Type="1" ver="1.0">
+                                    <dr.EcsCleanupTaskConf:Data ver="2.0">
+                                        <batchDays value="7"/>
+                                        <batchRep value="false"/>
+                                        <mailAddr value=""/>
+                                        <removeBatch value="true"/>
+                                        <removeStat value="true"/>
+                                        <removeUdr value="true"/>
+                                        <statDays value="21"/>
+                                        <udrDays value="7"/>
+                                        <udrRep value="false"/>
+                                    </dr.EcsCleanupTaskConf:Data>
+                                </dr.WfNodeConfig:value>
+                            </dr.WfNodeConfig:Configuration>
+                        </dr.WfNode:value>
+                    </Nodes>
+                    <Routes/>
+                    <Comments/>
+                    <Service/>
+                    <Logged_error_MIM/>
+                    <Workflow_ID_Counter value="1"/>
+                    <dr.WorkflowExecutionConfig:Execution_Config ver="10.0">
+                        <dr.DebugType:debugType value="EVENT"/>
+                        <dr.ExecutionSettings:executionSettings ver="11.0">
+                            <enabled value="false"/>
+                            <null:kafka/>
+                        </dr.ExecutionSettings:executionSettings>
+                        <noOfFilesToKeep value="0"/>
+                        <throughputMIM/>
+                        <txnHandler value="Default Handler"/>
+                    </dr.WorkflowExecutionConfig:Execution_Config>
+                    <Field_Types/>
+                    <Template_Valid value="false"/>
+                    <dr.DynamicConfigStorableDefinition:dyn ver="2.0">
+                        <fields type="java.util.TreeMap"/>
+                    </dr.DynamicConfigStorableDefinition:dyn>
+                    <null:External_Reference_Profile/>
+                    <External_Reference_Values type="java.util.Hashtable"/>
+                    <Export_Instance_Values value="false"/>
+                    <Package_Name value=""/>
+                    <External_Reference_Lists type="java.util.Hashtable"/>
+                    <External_Reference_Maps type="java.util.Hashtable"/>
+                </dr.WorkflowSystemTaskData:Data>
+            </mz:workflow-template>
+            <mz:wf-instances>
+                <mz:wf-instance instanceId="1" name="ECS_Maintenance" state="VALID" validationError=""/>
+            </mz:wf-instances>
+            <documentation value=""/>
+            <null:Dynamic_Parameters/>
+            <Is_Dry_Run value="false"/>
+        </dr.Configuration:dr.Configuration>
+    </mz:data>
+    <mz:referenced-data>
+        <layout>
+            <dr.WfNode>
+                <dr.WfRoute--.StorablePoint:ECS---.Maintenance..XYposition X_position="100" Y_position="100" ver="1.0"/>
+            </dr.WfNode>
+        </layout>
+        <identity>
+            <dr.WfNode>
+                <ECS---.Maintenance..ID value="4"/>
+            </dr.WfNode>
+        </identity>
+    </mz:referenced-data>
+</mz:configuration>

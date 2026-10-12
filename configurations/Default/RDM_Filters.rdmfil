@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mz:configuration format-version="1.0">
+    <mz:data>
+        <dr.Configuration:dr.Configuration Folder="Default" Key="SYSDATA_RDMFilters" Name="RDM_Filters" Owner="mzadmin" Type="Reference Data Filters" encrypted="false" ver="10.1">
+            <STRING:Access_Groups_-----.read_-----.write_-----.execute>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+            </STRING:Access_Groups_-----.read_-----.write_-----.execute>
+            <null:Auxiliary_Data/>
+            <dr.RDMFilterDataList:Data ver="1.0">
+                <FILTERLIST/>
+            </dr.RDMFilterDataList:Data>
+            <documentation value=""/>
+            <null:Dynamic_Parameters/>
+            <Is_Dry_Run value="false"/>
+        </dr.Configuration:dr.Configuration>
+    </mz:data>
+    <mz:referenced-data/>
+</mz:configuration>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mz:schema xmlns:mz="http://www.w3.org/2001/XMLSchema">
+    <mz:include schemaLocation="mz_simpleTypes.xsd"/>
+    <mz:element name="config_data">
+        <mz:complexType>
+            <mz:sequence>
+                <mz:element name="dr.Configuration" type="storable"/>
+            </mz:sequence>
+        </mz:complexType>
+    </mz:element>
+    <mz:complexType name="dr.Configuration">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="Access_Groups_-----.read_-----.write_-----.execute">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="array">
+                                    <mz:sequence maxOccurs="unbounded">
+                                        <mz:element name="value" type="string"/>
+                                    </mz:sequence>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Auxiliary_Data" type="storable"/>
+                    <mz:element name="Data" type="storable"/>
+                    <mz:element name="documentation" type="string"/>
+                    <mz:element name="Dynamic_Parameters">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="set">
+                                    <mz:sequence maxOccurs="unbounded"/>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Is_Dry_Run" type="boolean"/>
+                </mz:sequence>
+                <mz:attribute name="Key" type="string"/>
+                <mz:attribute name="Name" type="string"/>
+                <mz:attribute name="Type" type="string"/>
+                <mz:attribute name="Folder" type="string"/>
+                <mz:attribute name="Owner" type="string"/>
+                <mz:attribute name="encrypted" type="boolean"/>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.ConfigAuxData">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="Entries" type="map"/>
+                </mz:sequence>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.WorkflowSystemTaskData">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="Nodes">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="list">
+                                    <mz:sequence maxOccurs="unbounded">
+                                        <mz:element name="value" type="storable"/>
+                                    </mz:sequence>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Routes">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="list">
+                                    <mz:sequence maxOccurs="unbounded"/>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Comments">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="list">
+                                    <mz:sequence maxOccurs="unbounded"/>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Service">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="list">
+                                    <mz:sequence maxOccurs="unbounded"/>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Logged_error_MIM">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="list">
+                                    <mz:sequence maxOccurs="unbounded"/>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Workflow_ID_Counter" type="long"/>
+                    <mz:element name="Execution_Config" type="storable"/>
+                    <mz:element name="Field_Types">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="list">
+                                    <mz:sequence maxOccurs="unbounded"/>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="Template_Valid" type="boolean"/>
+                    <mz:element name="dyn" type="storable"/>
+                    <mz:element name="External_Reference_Profile" type="storable"/>
+                    <mz:element name="External_Reference_Values" type="map"/>
+                    <mz:element name="Export_Instance_Values" type="boolean"/>
+                    <mz:element name="Package_Name" type="string"/>
+                    <mz:element name="External_Reference_Lists" type="map"/>
+                    <mz:element name="External_Reference_Maps" type="map"/>
+                </mz:sequence>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.WfNode">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="ID" type="int"/>
+                    <mz:element name="Configuration">
+                        <mz:complexType>
+                            <mz:complexContent>
+                                <mz:extension base="array">
+                                    <mz:sequence maxOccurs="unbounded">
+                                        <mz:element name="value" type="storable"/>
+                                    </mz:sequence>
+                                </mz:extension>
+                            </mz:complexContent>
+                        </mz:complexType>
+                    </mz:element>
+                    <mz:element name="XYposition" type="storable"/>
+                </mz:sequence>
+                <mz:attribute name="Name" type="string"/>
+                <mz:attribute name="Classname" type="string"/>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.WfNodeConfig">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="Data" type="storable"/>
+                </mz:sequence>
+                <mz:attribute name="Type" type="int"/>
+                <mz:attribute name="Classname" type="string"/>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.WfRoute--.StorablePoint">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence/>
+                <mz:attribute name="X_position" type="int"/>
+                <mz:attribute name="Y_position" type="int"/>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.WorkflowExecutionConfig">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="debugType" type="enum"/>
+                    <mz:element name="executionSettings" type="storable"/>
+                    <mz:element name="noOfFilesToKeep" type="int"/>
+                    <mz:element name="throughputMIM" type="string"/>
+                    <mz:element name="txnHandler" type="string"/>
+                </mz:sequence>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.ExecutionSettings">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="enabled" type="boolean"/>
+                    <mz:element name="kafka" type="storable"/>
+                </mz:sequence>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+    <mz:complexType name="dr.DynamicConfigStorableDefinition">
+        <mz:complexContent>
+            <mz:extension base="storable">
+                <mz:sequence>
+                    <mz:element name="fields" type="map"/>
+                </mz:sequence>
+            </mz:extension>
+        </mz:complexContent>
+    </mz:complexType>
+</mz:schema>
